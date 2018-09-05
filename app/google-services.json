@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "727539795867",
+    "firebase_url": "https://svnit-busway.firebaseio.com",
+    "project_id": "svnit-busway",
+    "storage_bucket": "svnit-busway.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727539795867:android:f05c8a54ebfa1cdc",
+        "android_client_info": {
+          "package_name": "com.iam844.adityajaiswal.svnitbusway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727539795867-kc8slj1oe2kv73r7mdqucrdkgcvgn3ub.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.iam844.adityajaiswal.svnitbusway",
+            "certificate_hash": "7a58225539945d18a87ba31f105f8553e4812093"
+          }
+        },
+        {
+          "client_id": "727539795867-6gbpugokhmuqa78ad228o3gfcdgo2uaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc6x9NAodUnj6Dp8hiD3Jp-irjCMaWj9Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727539795867-6gbpugokhmuqa78ad228o3gfcdgo2uaa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
