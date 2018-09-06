@@ -25,9 +25,9 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
     private EditText mEmailField;
     private EditText mPasswordField;
 
-    // [START declare_auth]
+
     private FirebaseAuth mAuth;
-    // [END declare_auth]
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,12 +46,12 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.verify_email_button).setOnClickListener(this);
 
-        // [START initialize_auth]
+
         mAuth = FirebaseAuth.getInstance();
-        // [END initialize_auth]
+
     }
 
-    // [START on_start_check_user]
+    // on_start_check_user
     @Override
     public void onStart() {
         super.onStart();
@@ -59,7 +59,7 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
-    // [END on_start_check_user]
+    // on_start_check_user
 
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
@@ -67,9 +67,9 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
             return;
         }
 
-//        showProgressDialog();
+    //    showProgressDialog();
 
-        // [START create_user_with_email]
+        // create_user_with_email
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -87,12 +87,11 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
+
 //                        hideProgressDialog();
-                        // [END_EXCLUDE]
+
                     }
                 });
-        // [END create_user_with_email]
     }
 
     private void signIn(String email, String password) {
@@ -103,7 +102,6 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
 
 //        showProgressDialog();
 
-        // [START sign_in_with_email]
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -121,15 +119,14 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                             updateUI(null);
                         }
 
-                        // [START_EXCLUDE]
+
                         if (!task.isSuccessful()) {
                             mStatusTextView.setText(R.string.auth_failed);
                         }
 //                        hideProgressDialog();
-                        // [END_EXCLUDE]
+
                     }
                 });
-        // [END sign_in_with_email]
     }
 
     private void signOut() {
@@ -148,7 +145,7 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        // [START_EXCLUDE]
+
                         // Re-enable button
                         findViewById(R.id.verify_email_button).setEnabled(true);
 
@@ -162,10 +159,8 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                                     "Failed to send verification email.",
                                     Toast.LENGTH_SHORT).show();
                         }
-                        // [END_EXCLUDE]
                     }
                 });
-        // [END send_email_verification]
     }
 
     private boolean validateForm() {
