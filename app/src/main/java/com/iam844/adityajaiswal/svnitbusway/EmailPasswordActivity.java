@@ -1,5 +1,6 @@
 package com.iam844.adityajaiswal.svnitbusway;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,13 +79,18 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                      //      updateUI(user);
+
+                            //Not Working
+                            Intent intent = new Intent(EmailPasswordActivity.this, TrackerActivity.class);
+                            startActivity(intent);
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+//                            updateUI(null);
                         }
 
 
@@ -111,6 +117,12 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+
+
+                            Intent intent = new Intent("com.abhinavhackpundit.loginapp.User");
+                            startActivity(intent);
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());

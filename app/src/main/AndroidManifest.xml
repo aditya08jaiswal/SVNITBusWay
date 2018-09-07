@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.iam844.adityajaiswal.svnitbusway">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -17,8 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirebaseUIActivity" />
-        <activity android:name=".MainActivity"/>
+
+        <service
+            android:name=".TrackerService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>
