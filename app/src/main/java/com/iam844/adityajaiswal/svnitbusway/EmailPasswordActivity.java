@@ -115,12 +115,16 @@ public class EmailPasswordActivity extends AppCompatActivity implements View.OnC
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-
-
-                            Intent intent = new Intent("com.abhinavhackpundit.loginapp.User");
+                            Intent intent = new Intent(EmailPasswordActivity.this, MapActivity.class);
                             startActivity(intent);
+                            Toast.makeText(EmailPasswordActivity.this, "1",
+                                    Toast.LENGTH_SHORT).show();
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(EmailPasswordActivity.this, "2.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(user);
+                            Toast.makeText(EmailPasswordActivity.this, "3.",
+                                    Toast.LENGTH_SHORT).show();
 
 
                         } else {

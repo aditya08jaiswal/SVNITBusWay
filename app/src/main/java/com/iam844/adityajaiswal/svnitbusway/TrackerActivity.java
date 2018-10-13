@@ -21,7 +21,7 @@ public class TrackerActivity extends Activity {
         // Check GPS is enabled
         LocationManager lm = (LocationManager) getSystemService(LOCATION_SERVICE);
         if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            Toast.makeText(this, "Please enable location services", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enable location services to allow GPS tracking", Toast.LENGTH_SHORT).show();
             finish();
         }
 
